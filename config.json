@@ -1,0 +1,26 @@
+{
+    "log": {"loglevel": "none"},
+    "inbounds": [
+        {
+            "port": 10001, "listen": "127.0.0.1", "protocol": "vless",
+            "settings": {"clients": [{"id": "550e8400-e29b-41d4-a716-446655440000"}], "decryption": "none"},
+            "streamSettings": {"network": "ws", "wsSettings": {"path": "/vless"}}
+        },
+        {
+            "port": 10002, "listen": "127.0.0.1", "protocol": "vmess",
+            "settings": {"clients": [{"id": "550e8400-e29b-41d4-a716-446655440000"}]},
+            "streamSettings": {"network": "ws", "wsSettings": {"path": "/vmess"}}
+        },
+        {
+            "port": 10003, "listen": "127.0.0.1", "protocol": "trojan",
+            "settings": {"clients": [{"password": "potato_pass"}]},
+            "streamSettings": {"network": "ws", "wsSettings": {"path": "/trojan"}}
+        },
+        {
+            "port": 10004, "listen": "127.0.0.1", "protocol": "shadowsocks",
+            "settings": {"method": "aes-128-gcm", "password": "potato_pass"},
+            "streamSettings": {"network": "ws", "wsSettings": {"path": "/ss"}}
+        }
+    ],
+    "outbounds": [{"protocol": "freedom"}]
+}
